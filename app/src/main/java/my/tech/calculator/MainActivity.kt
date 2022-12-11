@@ -21,44 +21,48 @@ class MainActivity : AppCompatActivity() {
         initUI()
 
         viewModel.result.observe(this) {
-            if(it.isNotEmpty()) {
+            if (it.isNotEmpty()) {
                 binding.result.text = "= $it"
             } else {
                 binding.result.text = "0"
             }
         }
+
+        viewModel.expression.observe(this) {
+            binding.currentExpression.text = it.expression.toString()
+        }
     }
 
     private fun initUI() {
         binding.num0.setOnClickListener {
-            viewModel.addValue("0")
+            viewModel.addValue(ExpressionItem.Value0)
         }
         binding.num1.setOnClickListener {
-            viewModel.addValue("1")
+            viewModel.addValue(ExpressionItem.Value1)
         }
         binding.num2.setOnClickListener {
-            viewModel.addValue("2")
+            viewModel.addValue(ExpressionItem.Value2)
         }
         binding.num3.setOnClickListener {
-            viewModel.addValue("3")
+            viewModel.addValue(ExpressionItem.Value3)
         }
         binding.num4.setOnClickListener {
-            viewModel.addValue("4")
+            viewModel.addValue(ExpressionItem.Value4)
         }
         binding.num5.setOnClickListener {
-            viewModel.addValue("5")
+            viewModel.addValue(ExpressionItem.Value5)
         }
         binding.num6.setOnClickListener {
-            viewModel.addValue("6")
+            viewModel.addValue(ExpressionItem.Value6)
         }
         binding.num7.setOnClickListener {
-            viewModel.addValue("7")
+            viewModel.addValue(ExpressionItem.Value7)
         }
         binding.num8.setOnClickListener {
-            viewModel.addValue("8")
+            viewModel.addValue(ExpressionItem.Value8)
         }
         binding.num9.setOnClickListener {
-            viewModel.addValue("9")
+            viewModel.addValue(ExpressionItem.Value9)
         }
 
         binding.opEquality.setOnClickListener {
@@ -71,35 +75,35 @@ class MainActivity : AppCompatActivity() {
             viewModel.removeSymbol()
         }
         binding.addPoint.setOnClickListener {
-            viewModel.addValue(".")
+            viewModel.addValue(ExpressionItem.ValuePoint)
         }
         binding.addLeftBracket.setOnClickListener {
-            viewModel.addBracket("(")
+            viewModel.addBracket(ExpressionItem.LeftBracket)
         }
         binding.addRightBracket.setOnClickListener {
-            viewModel.addBracket(")")
+            viewModel.addBracket(ExpressionItem.RightBracket)
         }
 
         binding.opPlus.setOnClickListener {
-            viewModel.addOperation("+")
+            viewModel.addOperation(ExpressionItem.OperationPlus)
         }
         binding.opMinus.setOnClickListener {
-            viewModel.addOperation("-")
+            viewModel.addOperation(ExpressionItem.OperationMinus)
         }
         binding.opMul.setOnClickListener {
-            viewModel.addOperation("*")
+            viewModel.addOperation(ExpressionItem.OperationMul)
         }
         binding.opDiv.setOnClickListener {
-            viewModel.addOperation("/")
+            viewModel.addOperation(ExpressionItem.OperationDiv)
         }
         binding.opSqrt.setOnClickListener {
-            viewModel.addOperation("√")
+            viewModel.addOperation(ExpressionItem.OperationSqrt)
         }
         binding.opSqr.setOnClickListener {
-            viewModel.addOperation("^")
+            viewModel.addOperation(ExpressionItem.OperationSqr)
         }
         binding.opPersent.setOnClickListener {
-            viewModel.addOperation("%")
+            viewModel.addOperation(ExpressionItem.OperationPercent)
         }
 
         binding.switchTheme.setOnCheckedChangeListener { _, isChecked ->
