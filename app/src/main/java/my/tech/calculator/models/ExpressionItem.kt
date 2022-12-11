@@ -1,4 +1,4 @@
-package my.tech.calculator
+package my.tech.calculator.models
 
 sealed class ExpressionItem(val type: ExpressionType, val value: String){
     object OperationMul: ExpressionItem(ExpressionType.Operation, "*")

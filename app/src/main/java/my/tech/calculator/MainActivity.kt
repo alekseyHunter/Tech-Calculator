@@ -5,6 +5,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import my.tech.calculator.databinding.ActivityMainBinding
+import my.tech.calculator.models.ExpressionItem
+import my.tech.calculator.models.ThemeMode
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,6 +32,20 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.expression.observe(this) {
             binding.currentExpression.text = it.expression.toString()
+        }
+
+        viewModel.themeMode.observe(this){ theme ->
+            if(theme == ThemeMode.DARK){
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                delegate.applyDayNight()
+                binding.themeIcon.setImageResource(R.drawable.ic_day)
+                binding.switchTheme.isChecked = false
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                delegate.applyDayNight()
+                binding.themeIcon.setImageResource(R.drawable.ic_moon)
+                binding.switchTheme.isChecked = true
+            }
         }
     }
 
@@ -108,13 +124,9 @@ class MainActivity : AppCompatActivity() {
 
         binding.switchTheme.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                delegate.applyDayNight()
-                binding.themeIcon.setImageResource(R.drawable.ic_day)
+                viewModel.updateThemeMode(ThemeMode.DAY)
             } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                delegate.applyDayNight()
-                binding.themeIcon.setImageResource(R.drawable.ic_moon)
+                viewModel.updateThemeMode(ThemeMode.DARK)
             }
         }
 

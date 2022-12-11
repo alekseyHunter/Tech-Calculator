@@ -1,4 +1,4 @@
-package my.tech.calculator
+package my.tech.calculator.models
 
 data class ExpressionData(
     val expression: StringBuilder = StringBuilder(),
