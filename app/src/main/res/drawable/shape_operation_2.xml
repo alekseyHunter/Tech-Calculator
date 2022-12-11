@@ -5,10 +5,8 @@
     android:viewportHeight="144">
   <path
       android:pathData="M32,0.5c-17.67,0 -32,14.33 -32,32v80h0.01c0.27,17.17 14.48,31 31.99,31c17.5,0 31.71,-13.83 31.99,-31H64v-80C64,14.83 49.67,0.5 32,0.5z"
-      android:fillColor="#535353"/>
+      android:fillColor="@color/colorAccent"/>
   <path
       android:pathData="M32,4.05c17.1,0 31.07,13.25 31.95,29.91C63.98,33.4 64,32.84 64,32.28C64,14.83 49.68,0.69 32,0.69S0,14.83 0,32.28c0,0.57 0.02,1.12 0.05,1.68C0.93,17.3 14.9,4.05 32,4.05z"
-      android:strokeAlpha="0.4"
-      android:fillColor="#1D1D1D"
-      android:fillAlpha="0.4"/>
+      android:fillColor="@color/operationShadowColor"/>
 </vector>

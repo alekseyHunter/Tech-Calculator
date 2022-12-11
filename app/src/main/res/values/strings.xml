@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My Tech Calculator</string>
+    <string name="operation_sqr">x<sup><small>y</small></sup></string>
 </resources>
