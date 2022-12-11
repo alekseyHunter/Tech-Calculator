@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorAccent">#535353</color>
+    <color name="colorPrimary">#333333</color>
+    <color name="colorPrimaryDark">#504D4D</color>
+
+    <color name="backgroundColor">#212122</color>
+    <color name="textColor">#FFFFFF</color>
+    <color name="operationColor">#323232</color>
+    <color name="operationShadowColor">#404040</color>
+    <color name="switchColor">#C4C4C4</color>
+</resources>
